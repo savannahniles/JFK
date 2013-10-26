@@ -1,5 +1,19 @@
+@import "bootstrap";
+
 html, body, #map-canvas {
         height: 100%;
         margin: 0px;
         padding: 0px
       }
+
+img {
+	max-width: none;
+}
+
+.container {
+	color: #001A4C;
+}
+
+a {
+	color: #3661E7
+}
