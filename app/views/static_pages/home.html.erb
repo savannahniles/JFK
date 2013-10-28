@@ -47,7 +47,7 @@ function initialize() {
       '</div>'+
       '<div id="bodyContent">'+
       "<p>Walking down Boylston and you telling me that you decided you wouldn't talk to him for the month that he was back in London.</p>"+
-      '<p>Re-tether?  <a href="http://www.tether.cc">'+
+      '<p>Drifted 208 mi. from origin. Re-tether?  <a href="http://www.tether.cc">'+
       'Yes.</a></p> '+
       '</div>'+
       '</div>';
@@ -104,7 +104,9 @@ google.maps.event.addDomListener(window, 'load', initialize);
 //http://thenounproject.com/noun/close/?dwn=CCBY&dwn_icon=22166#icon-No22166
 
 </script>
-
+<ul class="nav pull-right">
+          <li><%= link_to "Add",    '#' %>    |    <%= link_to "About", about_path %></li>
+        </ul>
 <div id="map-canvas"></div>
 
 

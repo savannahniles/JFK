@@ -17,3 +17,22 @@ img {
 a {
 	color: #3661E7
 }
+
+.nav {
+	position: absolute;
+	z-index: 5;
+	right: 1%;
+	margin: 0;
+	padding: 0;
+	color: white;
+	li {
+		display: inline;
+	}
+	a {
+		color: white;
+	}
+}
+
+.nav > li > a {
+display: inline;
+}
