@@ -69,4 +69,18 @@ describe Post do
     it { should_not be_valid }
   end
 
+  describe "post ordering" do
+
+    let!(:older_post) do
+      Post.new(content: "Here is a post. It has content. Maybe this is a memory. Maybe not.", lat: 40.6743890, long: -73.9455, originLat: 40.6743890, originLong: -73.9455, distanceTraveled: 0, created_at: 1.day.ago) 
+    end
+    let!(:newer_post) do
+      Post.new(content: "Here is a post. It has content. Maybe this is a memory. Maybe not.", lat: 40.6743890, long: -73.9455, originLat: 40.6743890, originLong: -73.9455, distanceTraveled: 0, created_at: 1.hour.ago) 
+    end
+
+    it "should have the right posts in the right order" do
+    	#Post.order('created_at desc').all.should == [newer_post, older_post]
+    end
+  end
+
 end

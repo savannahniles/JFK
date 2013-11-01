@@ -1,0 +1,14 @@
+<%= form_for(@post) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= f.text_area :content, placeholder: "Describe who or what this X remembers.", style: "width: 300px;" %>
+</br>
+
+  <%= f.hidden_field :lat %>
+  <%= f.hidden_field :long %>
+  <%= f.hidden_field :originLat %>
+  <%= f.hidden_field :originLong %>
+  <%= f.hidden_field :distanceTraveled, :value => 0 %>
+
+  <%= f.submit "Post", class: "btn btn-default pull-right" %>
+<% end %>

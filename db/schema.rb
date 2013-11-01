@@ -11,17 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131025144149) do
+ActiveRecord::Schema.define(version: 20131031141927) do
 
   create_table "posts", force: true do |t|
     t.text     "content"
+    t.float    "distanceTraveled"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.float    "lat"
     t.float    "long"
     t.float    "originLat"
     t.float    "originLong"
-    t.float    "distanceTraveled"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
 end

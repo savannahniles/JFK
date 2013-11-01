@@ -6,7 +6,6 @@ describe "Static pages" do
 
   describe "About page" do
     before { visit about_path }
-
   end
 
   describe "Home page" do

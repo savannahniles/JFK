@@ -4,35 +4,33 @@
 //= require gmaps/google
 
 var map;
-var arrMarkers = [];
-var arrInfoWindows = [];
 var brooklyn = new google.maps.LatLng(40.6743890, -73.9455);
 
 var MY_MAPTYPE_ID = 'custom_style';
 
 var x = {    ////  global variable: the icon
-  url: 'whiteX.svg',
-  // This marker is 20 pixels wide by 32 pixels tall.
-  size: new google.maps.Size(100, 100),
-  // The origin for this image is 0,0.
-  origin: new google.maps.Point(0,0),
-  // The anchor for this image is the base of the flagpole at 0,32.
-  anchor: new google.maps.Point(50, 50)
+	url: 'whiteX.svg',
+	// This marker is 20 pixels wide by 32 pixels tall.
+	size: new google.maps.Size(100, 100),
+	// The origin for this image is 0,0.
+	origin: new google.maps.Point(0,0),
+	// The anchor for this image is the base of the flagpole at 0,32.
+	anchor: new google.maps.Point(50, 50)
 };
 
 var newSubmissionMarker = new google.maps.Marker({
-  icon: x,
-  draggable: true,
-  position: null,
-  map: null
+	icon: x,
+	draggable: true,
+	position: null,
+	map: null
 });
 
 function placeMarker(position, map) {
   newSubmissionMarker.setMap(null);
 
   newSubmissionMarker = new google.maps.Marker({
-    icon: x,
-    draggable: true,
+  	icon: x,
+  	draggable: true,
     position: position,
     map: map
   });
@@ -114,7 +112,7 @@ function initialize() {
 
   ////////////////////////////////////////////////
   //add markers for submissions
-  var contentString2 = '<div id="content">'+  //// test bubble
+  var contentString = '<div id="content">'+  //// test bubble
       //'<div id="siteNotice">'+
       //'</div>'+
       '<div id="bodyContent">'+
@@ -125,13 +123,13 @@ function initialize() {
       '</div>';
 
   var infowindow = new google.maps.InfoWindow({      //// new info window
-      content: contentString2,
+      content: contentString,
       maxWidth: 300
   });
 
-        //https://developers.google.com/maps/documentation/javascript/examples/event-closure
-        //how to add multiple markers ^ with multiple info windows
-        //Another good one: http://www.sitepoint.com/google-maps-api-jquery/
+			  //https://developers.google.com/maps/documentation/javascript/examples/event-closure
+			  //how to add multiple markers ^ with multiple info windows
+			  //Another good one: http://www.sitepoint.com/google-maps-api-jquery/
 
   var marker = new google.maps.Marker({
     position: new google.maps.LatLng(40.6743890, -73.9455),
@@ -159,40 +157,6 @@ function initialize() {
       content: newSumissionContent,
       maxWidth: 300
   });
-
-  $.getJSON("/posts.json", {}, function(json){
-        $.each(json, function(i,item){
-          console.log(item)
-
-            var contentString = '<div id="content">'+  //// test bubble
-            //'<div id="siteNotice">'+
-            //'</div>'+
-            '<div id="bodyContent">'+
-            "<p>" + item.post.content + "</p>"+
-            '<p>Drifted ' + item.post.distanceTraveled + ' mi. from origin. Re-tether?  <a href="http://www.tether.cc">'+
-            'Yes.</a></p> '+
-            '</div>'+
-            '</div>';
-          
-            $("#markers").append('<li><a href="#" rel="' + i + '">' + item.post.content + '</a></li>');
-            var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(item.post.lat, item.post.long),
-                icon: x,
-                draggable: false,
-                map: map,
-            });
-            arrMarkers[i] = marker;
-            var infowindow = new google.maps.InfoWindow({
-                content: contentString,
-                maxWidth: 300   
-            });
-            arrInfoWindows[i] = infowindow;
-            google.maps.event.addListener(marker, 'click', function() {
-                infowindow.open(map, marker);
-            });
-        });
-    });
-
 
   //////////////////////////////////////////////
   //add the listeners
