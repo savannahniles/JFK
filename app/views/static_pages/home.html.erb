@@ -94,7 +94,7 @@ function initialize() {
   ];
 
   var mapOptions = {
-    zoom: 10,
+    zoom: 5,
     //center: brooklyn,
     disableDefaultUI: true,
     mapTypeControlOptions: {
@@ -195,7 +195,7 @@ function initialize() {
             var contentString = '<div id="content">'+  //// test bubble
             //'<div id="siteNotice">'+
             //'</div>'+
-            '<div id="bodyContent">'+
+            '<div id="bodyContent" data-no-turbolink >'+
             "<p>" + item.post.content + "</p>"+
             '<p>Drifted ' + item.post.distanceTraveled + ' mi. from origin. Re-tether?' + 
             '<a href="/posts/'+ item.post.id + '/retether"> Yes.</a></p> '+
