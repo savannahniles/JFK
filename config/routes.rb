@@ -4,6 +4,12 @@ JFK::Application.routes.draw do
 
   resources :posts, only: [:index, :show, :create, :destroy]
 
+  resources :posts do
+    member do
+      get :retether
+    end
+  end
+
   root  'static_pages#home'
   match '/about',   to: 'static_pages#about',   via: 'get'
 

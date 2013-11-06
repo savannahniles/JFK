@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>50 X | <%= yield(:title) %></title>
+  <title>Tether.cc <%= yield(:title) %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 
-
+  
+  <script type="text/javascript" src="http://www.google.com/jsapi?autoload=%7Bmodules%3A%5B%7Bname%3A%22maps%22%2Cversion%3A3%2Cother_params%3A%22sensor%3Dfalse%22%7D%5D%7D"></script>
 
   <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfidViiertkrsqMwwJt1GhTjkpnLUmuAY&sensor=true">

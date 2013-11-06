@@ -22,6 +22,12 @@ class PostsController < ApplicationController
   def destroy
   end
 
+  def retether
+    @post = Post.find(params[:id])
+    @post.tether 
+    redirect_to root_url
+  end
+
   private
 
   def post_params

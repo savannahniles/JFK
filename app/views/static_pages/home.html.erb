@@ -95,7 +95,7 @@ function initialize() {
 
   var mapOptions = {
     zoom: 10,
-    center: brooklyn,
+    //center: brooklyn,
     disableDefaultUI: true,
     mapTypeControlOptions: {
       mapTypeIds: [google.maps.MapTypeId.ROADMAP, MY_MAPTYPE_ID]
@@ -197,8 +197,8 @@ function initialize() {
             //'</div>'+
             '<div id="bodyContent">'+
             "<p>" + item.post.content + "</p>"+
-            '<p>Drifted ' + item.post.distanceTraveled + ' mi. from origin. Re-tether?  <a href="http://www.tether.cc">'+
-            'Yes.</a></p> '+
+            '<p>Drifted ' + item.post.distanceTraveled + ' mi. from origin. Re-tether?' + 
+            '<a href="/posts/'+ item.post.id + '/retether"> Yes.</a></p> '+
             '</div>'+
             '</div>';
           
@@ -249,7 +249,7 @@ function handleNoGeolocation(errorFlag) {
 
   var options = {
     map: map,
-    position: new google.maps.LatLng(60, 105),
+    position: new google.maps.LatLng(32.7788210,-96.8084740),
     content: content
   };
 
@@ -258,8 +258,8 @@ function handleNoGeolocation(errorFlag) {
 }
 
 
-
-google.maps.event.addDomListener(window, 'load', initialize);
+google.setOnLoadCallback(initialize);
+//google.maps.event.addDomListener(window, 'load', initialize);
 
 //http://guruparang.blogspot.com/2012/06/google-maps-locations-live-update-from.html
 //live updating for later ^

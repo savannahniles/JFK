@@ -1,2 +1,2 @@
 collection @posts
-attributes :content, :distanceTraveled, :lat, :long
+attributes :id, :content, :distanceTraveled, :lat, :long
